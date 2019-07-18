@@ -4,4 +4,7 @@ date: "2019-05-04"
 title: "My first blog post"
 ---
 
+![alt-text for image](gatsby-astronaut.png)
+-This talks about the image that you see here
+
 This is content yo.
