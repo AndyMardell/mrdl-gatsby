@@ -2,15 +2,13 @@
 
 A custom gatsby markdown blog for mardell.me
 
-## 🚀 Quick start
+## 🚀 Development
 
-**Development.**
+Navigate into the root directory and start it up.
 
-    Navigate into the root directory and start it up.
-
-    ```sh
-    gatsby develop
-    ```
+```sh
+gatsby develop
+```
 
 ## 💫 Deploy
 
