@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Domine:700|Literata:400,400i,700,700i|Open+Sans:800&display=swap')
+
+strong, b
+  font-weight 700
+
+a
+  color green
+  text-decoration none
+  position relative
+
+  &:after
+    content ''
+    background-color yellow
+    position absolute
+    bottom -0.1em
+    left 0
+    right 0
+    height 0.2em
+    z-index -1
+    transition 200ms ease-in-out bottom
+
+  &:hover:after
+    bottom 0
+
+h1
+h2
+h3
+h4
+h5
+  color dark
+  font-family font-headings
+  font-weight 800
+  text-transform uppercase
+  text-decoration none
+  margin 0.5em 0
+
+  a:after
+    bottom 0.1em
+    height 0.3em
+
+  a:hover:after
+    bottom -0.1em

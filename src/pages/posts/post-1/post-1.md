@@ -5,6 +5,9 @@ title: "My first blog post"
 ---
 
 ![alt-text for image](gatsby-astronaut.png)
--This talks about the image that you see here
 
-This is content yo.
+This is an excerpt.
+
+<!-- readmore -->
+
+This is content.

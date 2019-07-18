@@ -8,6 +8,14 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-transition-link`,
     {
+      resolve: `gatsby-plugin-stylus-resources`,
+      options: {
+        resources: [
+          './src/css/config/*'
+        ]
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -38,6 +46,7 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
+        excerpt_separator: `<!-- readmore -->`,
         plugins: [
           {
             resolve: `gatsby-remark-images`,

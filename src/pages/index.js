@@ -27,12 +27,15 @@ IndexPage.propTypes = {
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark {
+    allMarkdownRemark (
+      sort: { order: DESC, fields: [frontmatter___date] }
+      limit: 10
+    ) {
       edges {
         node {
           excerpt
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "DD MMMM YYYY")
             path
             title
           }
