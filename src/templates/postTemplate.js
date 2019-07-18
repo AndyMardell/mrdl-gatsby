@@ -2,29 +2,24 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import Layout from '../components/layout'
+import Post from '../components/post'
+import SEO from '../components/seo'
 
-const Template = ({ data }) => {
+const PostTemplate = ({ data }) => {
   const { markdownRemark } = data
-  const { frontmatter, html } = markdownRemark
 
   return (
     <Layout>
-      <div className="blog-post-container">
-        <div className="blog-post">
-          <h1>{frontmatter.title}</h1>
-          <h2>{frontmatter.date}</h2>
-          <div
-            className="blog-post-content"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
-        </div>
+      <SEO title={markdownRemark.frontmatter.title} />
+      <div className="posts">
+        <Post data={markdownRemark} />
       </div>
     </Layout>
   )
 }
 
-Template.propTypes = {
-  data: PropTypes.object
+PostTemplate.propTypes = {
+  data: PropTypes.object.isRequired
 }
 
 export const pageQuery = graphql`
@@ -40,4 +35,4 @@ export const pageQuery = graphql`
   }
 `
 
-export default Template
+export default PostTemplate
