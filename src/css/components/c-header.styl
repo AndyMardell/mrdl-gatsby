@@ -69,13 +69,11 @@
 
     h1
     h2
-      font-size 5rem
-      responsive-font(20, 95)
-      line-height 1.6em
-      responsive-line-height(1.2, 1.6)
+      responsive-font(20, 95, 5rem)
+      responsive-line-height(1.2, 1.6, 1.6em)
+      responsive-letter-spacing(3, 15, 0.15em)
       text-align center
       color green
-      letter-spacing 0.15em
 
       @media (max-width: 700px)
         margin-top: 10%
@@ -89,11 +87,11 @@
       text-transform none
       padding 10px
       display inline-block
-      responsive-font(14, 25)
+      responsive-font(14, 25, 2em)
 
   &__menu
     font-family font-secondary
     text-transform none
     padding 10px
     display block
-    responsive-font(14, 25)
+    responsive-font(14, 25, 2em)

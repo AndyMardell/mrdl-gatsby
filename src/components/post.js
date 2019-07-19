@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import '../css/components/post.styl'
 
 const Post = ({ data, archive }) => (
   <div className='post'>
