@@ -9,7 +9,7 @@ const PostTemplate = ({ data, location }) => {
   const { markdownRemark } = data
 
   return (
-    <Layout location={location}>
+    <Layout location={location} hero={markdownRemark.frontmatter.title}>
       <SEO title={markdownRemark.frontmatter.title} />
       <div className="posts">
         <Post data={markdownRemark} />
