@@ -24,8 +24,8 @@ const Header = ({ siteTitle, location, hero }) => {
       </div>
       <div className='header__container'>
         {page === 'home'
-          ? <h1 className='header__logo  link--plain'><Link to='/'>{siteTitle}</Link></h1>
-          : <h2 className='header__logo  link--plain'><Link to='/'>{siteTitle}</Link></h2>
+          ? <h1 className='header__logo'><Link to='/' className='link--plain'>{siteTitle}</Link></h1>
+          : <h2 className='header__logo'><Link to='/' className='link--plain'>{siteTitle}</Link></h2>
         }
         <a className='header__menu  link--plain' href='#'>menu</a>
       </div>
