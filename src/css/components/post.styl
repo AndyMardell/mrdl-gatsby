@@ -1,8 +1,12 @@
+@import '../prism/*'
+
 .post
   margin 5rem 0
+  responsive-margin-vertical(20, 80)
 
   &__title
-    font-size 2.5em
+    responsive-font(30, 50)
+    responsive-line-height(1, 1.5)
     margin 0.3em 0
 
   &__meta
@@ -11,4 +15,14 @@
     color brown
 
   &__content
-    margin 2rem 0 1rem
+    margin 1.5rem 0
+    responsive-margin-vertical(15, 25)
+
+  &__intro p
+    font-size 1.2rem
+    responsive-font(16, 22)
+    font-weight bold
+
+  .gatsby-highlight
+    margin 3em 0
+    responsive-margin-vertical(20, 30)

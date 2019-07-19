@@ -29,7 +29,7 @@ const Header = ({ siteTitle, location, hero }) => {
         }
         <a className='header__menu  link--plain' href='#'>menu</a>
       </div>
-      <div className='header__hero'>
+      <div className={`header__hero  header__hero--${page}`}>
         {(page === 'home' || !hero)
           ? <h2>I make things<br />for the internet</h2>
           : <h1>{hero}</h1>

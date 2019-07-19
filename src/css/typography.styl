@@ -8,19 +8,15 @@ a
   text-decoration none
   position relative
 
-  &:not(.link--plain):after
-    content ''
-    background-color yellow
-    position absolute
-    bottom -0.1em
-    left 0
-    right 0
-    height 0.2em
-    z-index -1
-    transition 200ms ease-in-out bottom
+  &:not(.link--plain)
+    border-bottom 0.2em solid yellow
+    transition 200ms ease-in-out border-bottom
 
-  &:hover:after
-    bottom 0
+    &:hover:after
+      border-bottom none
+
+  &.link
+    font-size 1.1em
 
 h1
 h2
@@ -34,9 +30,38 @@ h5
   text-decoration none
   margin 0.5em 0
 
-  &.link > a:after
-    bottom 0.1em
-    height 0.3em
+  &.link > a
+    border-bottom none
 
-  &.link > a:hover:after
-    bottom -0.1em
+    &:after
+      content ''
+      background-color yellow
+      position absolute
+      left 0
+      right 0
+      z-index -1
+      transition 200ms ease-in-out bottom
+      bottom 0.1em
+      height 0.3em
+
+    &:hover:after
+      bottom -0.1em
+
+p
+  font-family font-body
+  font-weight 400
+  color dark
+  responsive-font(14, 18)
+  responsive-line-height(1.8, 2)
+  margin 2em 0
+
+blockquote
+  padding-left 20px
+  border-left 8px solid brown
+
+  p
+    font-weight bold
+    responsive-font(14, 18)
+    responsive-line-height(1.8, 2)
+    padding-top 7px
+    padding-bottom 15px

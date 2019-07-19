@@ -11,12 +11,12 @@ const IndexPage = ({ data, location }) => {
 
   return (
     <Layout location={location}>
-      <SEO title="Home" />
-      <div className="blog-post-container">
+      <SEO title="Andy Mardell: Portsmouth Web Developer" />
+      <>
         {edges.map(({ node }, i) =>
           <Post key={i} data={node} archive />
         )}
-      </div>
+      </>
     </Layout>
   )
 }

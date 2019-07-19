@@ -1,10 +1,15 @@
 .header
   margin-bottom 1.45rem
   border-bottom 24px solid green
-  height 650px
+  height 50vw
+  min-height 230px
+  max-height 680px
   position relative
   display flex
   flex-direction column
+
+  @media (max-width: 700px)
+    border-bottom-width 10px
 
   &__background
     position absolute
@@ -46,26 +51,32 @@
     position absolute
     top 0
     left 0
-    padding 5rem 5.5rem
-    width calc(100% - 11rem)
+    padding 5vw 5.5vw
+    width calc(100% - 11vw)
     display flex
     justify-content space-between
 
   &__hero
-    width 75%
+    width 100%
     flex-grow 1
     align-self center
     display flex
     align-items center
     justify-content center
 
+    &--post
+      width 75%
+
     h1
     h2
-      font-size 6rem
+      responsive-font(20, 95)
+      responsive-line-height(1, 1.5)
       text-align center
-      line-height 1
       color green
       letter-spacing 0.15em
+
+      @media (max-width: 700px)
+        margin-top: 10%
 
   &__logo
     display block
@@ -76,11 +87,11 @@
       text-transform none
       padding 10px
       display inline-block
-      font-size 1.5rem
+      responsive-font(14, 25)
 
   &__menu
     font-family font-secondary
     text-transform none
     padding 10px
     display block
-    font-size 1.5rem
+    responsive-font(14, 25)
