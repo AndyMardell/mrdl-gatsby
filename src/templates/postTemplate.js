@@ -5,11 +5,11 @@ import Layout from '../components/layout'
 import Post from '../components/post'
 import SEO from '../components/seo'
 
-const PostTemplate = ({ data }) => {
+const PostTemplate = ({ data, location }) => {
   const { markdownRemark } = data
 
   return (
-    <Layout>
+    <Layout location={location}>
       <SEO title={markdownRemark.frontmatter.title} />
       <div className="posts">
         <Post data={markdownRemark} />
@@ -19,7 +19,8 @@ const PostTemplate = ({ data }) => {
 }
 
 PostTemplate.propTypes = {
-  data: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired
 }
 
 export const pageQuery = graphql`

@@ -1,0 +1,87 @@
+.header
+  margin-bottom 1.45rem
+  border-bottom 24px solid green
+  height 650px
+  position relative
+  display flex
+  flex-direction column
+
+  &__background
+    position absolute
+    left 0
+    right 0
+    bottom 0
+    top 0
+
+    &__left
+    &__right
+      position absolute
+      background-image url(../images/triangle-left.svg)
+      background-size contain
+      background-repeat no-repeat
+      background-position top left
+      width 40%
+      height 100%
+      left 0
+      z-index -1
+
+    &__right
+      background-image url(../images/triangle-right.svg)
+      background-position top right
+      left auto
+      right 0
+
+    &__bottom
+      position absolute
+      bottom 0
+      width 100%
+      height 80%
+      background-image url(../images/triangle-bottom.svg)
+      background-size contain
+      background-position center bottom
+      background-repeat no-repeat
+      z-index -1
+
+  &__container
+    position absolute
+    top 0
+    left 0
+    padding 5rem 5.5rem
+    width calc(100% - 11rem)
+    display flex
+    justify-content space-between
+    align-self flex-start
+
+  &__hero
+    width 94%
+    padding 0 3%
+    flex-grow 1
+    align-self center
+    display flex
+    align-items center
+    justify-content center
+
+    h2
+      font-size 6rem
+      text-align center
+      line-height 1
+      color green
+      letter-spacing 0.15em
+
+  &__logo
+    display block
+    margin 0
+
+    a
+      font-family font-secondary
+      text-transform none
+      padding 10px
+      display inline-block
+      font-size 1.5rem
+
+  &__menu
+    font-family font-secondary
+    text-transform none
+    padding 10px
+    display block
+    font-size 1.5rem

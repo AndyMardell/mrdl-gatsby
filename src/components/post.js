@@ -8,7 +8,7 @@ const Post = ({ data, archive }) => (
     {archive &&
       <>
         <span className='post__meta'>{data.frontmatter.date}</span>
-        <h3 className='post__title'>
+        <h3 className='post__title link'>
           <Link to={data.frontmatter.path}>{data.frontmatter.title}</Link>
         </h3>
       </>
@@ -18,7 +18,7 @@ const Post = ({ data, archive }) => (
       dangerouslySetInnerHTML={{ __html: archive ? data.excerpt : data.html }}
     />
     {archive &&
-      <Link to={data.frontmatter.path}>Read more &rarr;</Link>
+      <Link className='link' to={data.frontmatter.path}>Read more &rarr;</Link>
     }
   </div>
 )

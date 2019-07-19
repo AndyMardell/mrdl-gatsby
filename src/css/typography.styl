@@ -8,7 +8,7 @@ a
   text-decoration none
   position relative
 
-  &:after
+  &:not(.link--plain):after
     content ''
     background-color yellow
     position absolute
@@ -34,9 +34,9 @@ h5
   text-decoration none
   margin 0.5em 0
 
-  a:after
+  &.link > a:after
     bottom 0.1em
     height 0.3em
 
-  a:hover:after
+  &.link > a:hover:after
     bottom -0.1em

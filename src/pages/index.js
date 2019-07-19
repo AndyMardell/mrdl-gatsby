@@ -5,12 +5,12 @@ import Layout from '../components/layout'
 import Post from '../components/post'
 import SEO from '../components/seo'
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({ data, location }) => {
   const { allMarkdownRemark } = data
   const { edges } = allMarkdownRemark
 
   return (
-    <Layout>
+    <Layout location={location}>
       <SEO title="Home" />
       <div className="blog-post-container">
         {edges.map(({ node }, i) =>
@@ -22,7 +22,8 @@ const IndexPage = ({ data }) => {
 }
 
 IndexPage.propTypes = {
-  data: PropTypes.object
+  data: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired
 }
 
 export const pageQuery = graphql`
