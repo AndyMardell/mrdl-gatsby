@@ -1,6 +1,6 @@
 # Mardell.me
 
-A custom gatsby markdown blog for mardell.me
+A blog for [mardell.me](https://mardell.me) built with Gatsby, React, Remark, Stylus and love.
 
 ## 🚀 Development
 
@@ -10,6 +10,6 @@ Navigate into the root directory and start it up.
 gatsby develop
 ```
 
-## 💫 Deploy
+## 💫 Deployment
 
-Deployment is handled by netlify. Push to master and it will publish changes.
+Deployment is handled by Netlify.

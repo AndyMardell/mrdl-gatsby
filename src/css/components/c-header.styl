@@ -64,9 +64,6 @@
     align-items center
     justify-content center
 
-    &--post
-      width 75%
-
     h1
     h2
       responsive-font(20, 95, 5rem)
@@ -77,6 +74,13 @@
 
       @media (max-width: 700px)
         margin-top: 10%
+
+    &--post
+      width 75%
+
+      h1
+        responsive-font(18, 70, 4rem)
+        responsive-letter-spacing(0, 8, 0.1em)
 
   &__logo
     display block
