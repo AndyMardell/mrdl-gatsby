@@ -32,20 +32,12 @@ h5
 
   &.link > a
     border-bottom none
+    background-image linear-gradient(180deg, transparent 75%, yellow 0)
+    background-size 100% 90%
+    transition all 200ms ease-in-out
 
-    &:after
-      content ''
-      background-color yellow
-      position absolute
-      left 0
-      right 0
-      z-index -1
-      transition 200ms ease-in-out bottom
-      bottom 0.1em
-      height 0.3em
-
-    &:hover:after
-      bottom -0.1em
+    &:hover
+      background-size 100% 100%
 
 p
   font-family font-body
