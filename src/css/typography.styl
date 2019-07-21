@@ -9,8 +9,12 @@ a
   position relative
 
   &:not(.link--plain)
-    border-bottom 0.2em solid yellow
-    transition 200ms ease-in-out border-bottom
+    background-image linear-gradient(180deg, transparent 75%, yellow 0)
+    background-size 100% 100%
+    transition 200ms ease-in-out background-size
+
+    &:hover
+      background-size 100% 90%
 
     &:hover:after
       border-bottom none
@@ -33,8 +37,9 @@ h5
   &.link > a
     border-bottom none
     background-image linear-gradient(180deg, transparent 75%, yellow 0)
+    background-repeat no-repeat
     background-size 100% 90%
-    transition all 200ms ease-in-out
+    transition background-size .4s ease
 
     &:hover
       background-size 100% 100%

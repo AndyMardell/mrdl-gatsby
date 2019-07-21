@@ -6,7 +6,7 @@ const Post = ({ data, archive }) => (
   <div className='post'>
     {archive &&
       <>
-        <span className='post__meta'>{data.frontmatter.date} - {data.fields.readingTime.text}</span>
+        <span className='post__meta'>{data.frontmatter.date} – {data.fields.readingTime.text}</span>
         <h3 className='post__title link'>
           <Link to={data.frontmatter.path}>{data.frontmatter.title}</Link>
         </h3>
