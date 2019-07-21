@@ -47,6 +47,7 @@ module.exports = {
       options: {
         excerpt_separator: `<!-- readmore -->`,
         plugins: [
+          `gatsby-remark-reading-time`,
           {
             resolve: `gatsby-remark-images`,
             options: {
