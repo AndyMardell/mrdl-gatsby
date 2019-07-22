@@ -1,19 +1,13 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import Layout from '../components/layout'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import SEO from '../components/seo'
-import PropTypes from 'prop-types'
 
-const SecondPage = ({ location }) => (
-  <Layout location={location}>
+const SecondPage = () => (
+  <>
     <SEO title="Page two" />
     <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
-  </Layout>
+    <AniLink fade to="/">Go back to the homepage</AniLink>
+  </>
 )
-
-SecondPage.propTypes = {
-  location: PropTypes.object.isRequired
-}
 
 export default SecondPage
