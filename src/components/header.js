@@ -20,6 +20,11 @@ const Header = ({ location }) => {
     }
   })(location.pathname)
 
+  const toggleMenu = (e) => {
+    e.preventDefault()
+    setContext({ ...context, showMenu: true })
+  }
+
   return (
     <>
       <header className='header'>
@@ -33,7 +38,7 @@ const Header = ({ location }) => {
             ? <h1 className='header__logo'><AniLink fade to='/' className='link--plain'>{siteTitle}</AniLink></h1>
             : <h2 className='header__logo'><AniLink fade to='/' className='link--plain'>{siteTitle}</AniLink></h2>
           }
-          <a className='header__menu  link--plain' href='#'>menu</a>
+          <a className='header__menu  link--plain' href='#' onClick={(e) => toggleMenu(e)}>menu</a>
         </div>
         <div className={`header__hero  header__hero--${page}`}>
           {page === 'home'
@@ -42,7 +47,7 @@ const Header = ({ location }) => {
           }
         </div>
       </header>
-      <Menu show={false} />
+      <Menu />
     </>
   )
 }
