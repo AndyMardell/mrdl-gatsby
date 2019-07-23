@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import FadeLink from '../transitions/fade'
 
 const Post = ({ data, archive }) => (
   <div className='post'>
@@ -8,7 +8,7 @@ const Post = ({ data, archive }) => (
       <>
         <span className='post__meta'>{data.frontmatter.date} – {data.fields.readingTime.text}</span>
         <h3 className='post__title link'>
-          <AniLink fade to={data.frontmatter.path}>{data.frontmatter.title}</AniLink>
+          <FadeLink to={data.frontmatter.path}>{data.frontmatter.title}</FadeLink>
         </h3>
       </>
     }
@@ -17,7 +17,7 @@ const Post = ({ data, archive }) => (
       dangerouslySetInnerHTML={{ __html: archive ? data.excerpt : data.html }}
     />
     {archive &&
-      <AniLink fade className='link' to={data.frontmatter.path}>Read more &rarr;</AniLink>
+      <FadeLink className='link' to={data.frontmatter.path}>Read more &rarr;</FadeLink>
     }
   </div>
 )

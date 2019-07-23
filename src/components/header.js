@@ -1,18 +1,20 @@
 import React, { useContext, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import Menu from './menu'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import FadeLink from '../transitions/fade'
 import Context from '../context'
 import { CSSTransition } from 'react-transition-group'
 
-const Header = ({ location }) => {
+const Header = (props) => {
+  const { location } = props
+  const specifiedHero = props.hero
   const [context, setContext] = useContext(Context)
   const [inProp, setInProp] = useState(false)
 
   useEffect(() => {
     setContext({ ...context, location })
     setInProp(true)
-  }, [])
+  }, [location])
 
   const { siteTitle, hero } = context
   const page = ((pathname) => {
@@ -27,8 +29,8 @@ const Header = ({ location }) => {
   })(location.pathname)
 
   const toggleMenu = (e) => {
-    e.preventDefault()
-    setContext({ ...context, showMenu: true })
+    if (e) e.preventDefault()
+    setContext({ ...context, showMenu: !context.showMenu })
   }
 
   return (
@@ -39,18 +41,28 @@ const Header = ({ location }) => {
           <div className='header__background__right' />
           <div className='header__background__bottom' />
         </div>
-        <div className='header__container'>
+        <div className={`header__container  ${context.showMenu ? 'header__container--fixed' : ''}`}>
           {page === 'home'
-            ? <h1 className='header__logo'><AniLink fade to='/' className='link--plain'>{siteTitle}</AniLink></h1>
-            : <h2 className='header__logo'><AniLink fade to='/' className='link--plain'>{siteTitle}</AniLink></h2>
+            ? <h1 className='header__logo'>
+              <FadeLink to='/' className='link--plain' onClick={context.showMenu && toggleMenu}>
+                {siteTitle}
+              </FadeLink>
+            </h1>
+            : <h2 className='header__logo'>
+              <FadeLink to='/' className='link--plain' onClick={context.showMenu && toggleMenu}>
+                {siteTitle}
+              </FadeLink>
+            </h2>
           }
-          <a className='header__menu  link--plain' href='#' onClick={(e) => toggleMenu(e)}>menu</a>
+          <a className='header__menu  link--plain' href='#' onClick={(e) => toggleMenu(e)}>
+            {context.showMenu ? 'close' : 'menu'}
+          </a>
         </div>
         <div className={`header__hero  header__hero--${page}`}>
           <CSSTransition in={inProp} timeout={200} classNames="my-node">
             {page === 'home'
               ? <h2>I make things<br />for the internet</h2>
-              : <h1>{hero}</h1>
+              : <h1>{specifiedHero || hero}</h1>
             }
           </CSSTransition>
         </div>
@@ -61,7 +73,8 @@ const Header = ({ location }) => {
 }
 
 Header.propTypes = {
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
+  hero: PropTypes.string
 }
 
 export default Header

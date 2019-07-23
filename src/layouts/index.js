@@ -4,9 +4,9 @@ import Header from '../components/header'
 import Footer from '../components/footer'
 import '../css/app.styl'
 
-const Layout = ({ children, location }) => (
+const Layout = ({ children, location, hero }) => (
   <>
-    <Header location={location} />
+    <Header location={location} hero={hero} />
     <main>
       {children}
       <Footer />

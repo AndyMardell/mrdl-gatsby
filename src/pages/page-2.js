@@ -1,14 +1,14 @@
 import React from 'react'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import FadeLink from '../transitions/fade'
 import SEO from '../components/seo'
 import Layout from '../layouts'
 import PropTypes from 'prop-types'
 
 const SecondPage = ({ location }) => (
-  <Layout location={location}>
+  <Layout location={location} hero='Page 2, yo'>
     <SEO title="Page two" />
     <p>Welcome to page 2</p>
-    <AniLink fade to="/">Go back to the homepage</AniLink>
+    <FadeLink to="/">Go back to the homepage</FadeLink>
   </Layout>
 )
 
