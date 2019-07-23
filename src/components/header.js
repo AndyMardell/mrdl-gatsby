@@ -1,14 +1,20 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import Menu from './menu'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import Context from '../context'
+import { CSSTransition } from 'react-transition-group'
 
 const Header = ({ location }) => {
   const [context, setContext] = useContext(Context)
-  useEffect(() => setContext({ ...context, location }), [])
-  const { siteTitle, hero } = context
+  const [inProp, setInProp] = useState(false)
 
+  useEffect(() => {
+    setContext({ ...context, location })
+    setInProp(true)
+  }, [])
+
+  const { siteTitle, hero } = context
   const page = ((pathname) => {
     switch (true) {
       case pathname === '/':
@@ -41,10 +47,12 @@ const Header = ({ location }) => {
           <a className='header__menu  link--plain' href='#' onClick={(e) => toggleMenu(e)}>menu</a>
         </div>
         <div className={`header__hero  header__hero--${page}`}>
-          {page === 'home'
-            ? <h2>I make things<br />for the internet</h2>
-            : <h1>{hero}</h1>
-          }
+          <CSSTransition in={inProp} timeout={200} classNames="my-node">
+            {page === 'home'
+              ? <h2>I make things<br />for the internet</h2>
+              : <h1>{hero}</h1>
+            }
+          </CSSTransition>
         </div>
       </header>
       <Menu />

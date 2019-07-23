@@ -1,17 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Header from '../components/header'
-import Footer from '../components/footer'
+import { ContextProvider } from '../context'
 import '../css/app.styl'
 
 const Layout = ({ children, location }) => (
-  <>
-    <Header location={location} />
-    <main>
-      {children}
-      <Footer />
-    </main>
-  </>
+  <ContextProvider location={location}>
+    {children}
+  </ContextProvider>
 )
 
 Layout.propTypes = {
