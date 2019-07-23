@@ -20,7 +20,7 @@ const Menu = () => {
         <nav className='menu__pages'>
           <ul>
             <li><FadeLink to='/' onClick={hideMenu}>Blog</FadeLink></li>
-            <li><FadeLink to='/page-2' onClick={hideMenu}>Page 2</FadeLink></li>
+            <li><FadeLink to='/contact' onClick={hideMenu}>Contact</FadeLink></li>
           </ul>
         </nav>
       </div>
