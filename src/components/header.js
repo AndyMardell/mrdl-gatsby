@@ -44,17 +44,17 @@ const Header = (props) => {
         <div className={`header__container  ${context.showMenu ? 'header__container--fixed' : ''}`}>
           {page === 'home'
             ? <h1 className='header__logo'>
-              <FadeLink to='/' className='link--plain' onClick={context.showMenu && toggleMenu}>
+              <FadeLink to='/' className='link--small-underline' onClick={context.showMenu && toggleMenu}>
                 {siteTitle}
               </FadeLink>
             </h1>
             : <h2 className='header__logo'>
-              <FadeLink to='/' className='link--plain' onClick={context.showMenu && toggleMenu}>
+              <FadeLink to='/' className='link--small-underline' onClick={context.showMenu && toggleMenu}>
                 {siteTitle}
               </FadeLink>
             </h2>
           }
-          <a className='header__menu  link--plain' href='#' onClick={(e) => toggleMenu(e)}>
+          <a className='header__menu  link--small-underline' href='#' onClick={(e) => toggleMenu(e)}>
             {context.showMenu ? 'close' : 'menu'}
           </a>
         </div>
