@@ -1,8 +1,8 @@
 import React from 'react'
 import TransitionLink from 'gatsby-plugin-transition-link'
-import TimelineMax from 'gsap/TimelineMax'
+import { TimelineMax } from 'gsap'
+
 import PropTypes from 'prop-types'
-import 'gsap/CSSPlugin'
 
 const fade = ({ exit: { length }, node, direction }) => {
   const duration = direction === 'out' ? length + length / 4 : length
